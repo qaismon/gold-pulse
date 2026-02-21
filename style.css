@@ -1,0 +1,184 @@
+body {
+    background-color: #0b0e11;
+    color: #eaecef;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.terminal {
+    background: #181a20;
+    width: 420px;
+    padding: 20px;
+    border: 1px solid #2b2f36;
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.8);
+}
+
+header h1 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #f0b90b;
+    letter-spacing: 1px;
+}
+
+.live-tag {
+    font-size: 0.65rem;
+    color: #2ebd85;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.ticker {
+    background: #000;
+    padding: 10px;
+    margin: 15px 0;
+    text-align: center;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 1.1rem;
+    color: #f0b90b;
+    border: 1px solid #333;
+}
+
+#chart-container {
+    width: 100%;
+    height: 180px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #2b2f36;
+}
+
+.screen {
+    height: 90px;
+    background: #1e2329;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    border: 2px solid #2b2f36;
+    transition: 0.3s ease;
+}
+
+.metrics {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 0.75rem;
+    padding: 0 5px;
+}
+
+.metric-item span { color: #f0b90b; font-weight: bold; }
+
+#action-btn {
+    width: 100%;
+    padding: 16px;
+    background: #f0b90b;
+    color: #000;
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.2s;
+    text-transform: uppercase;
+}
+
+#action-btn:hover { background: #d9a508; transform: translateY(-1px); }
+#action-btn:active { transform: translateY(0); }
+
+.risk-manager {
+    background: #000;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 1px solid #333;
+}
+
+.risk-manager h3 {
+    margin: 0 0 12px 0;
+    color: #848e9c;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.input-row { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+}
+
+.input-row input {
+    background: #1e2329;
+    border: 1px solid #444;
+    color: #f0b90b;
+    width: 90px;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.risk-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.res-box {
+    background: #181a20;
+    padding: 8px;
+    border-radius: 4px;
+    color: #848e9c;
+    font-size: 0.65rem;
+}
+
+.res-box span { 
+    color: #fff; 
+    display: block; 
+    font-weight: bold; 
+    font-size: 0.9rem;
+    margin-top: 4px; 
+}
+
+.bullish { border-color: #2ebd85 !important; color: #2ebd85; box-shadow: 0 0 15px rgba(46, 189, 133, 0.2); }
+.bearish { border-color: #f6465d !important; color: #f6465d; box-shadow: 0 0 15px rgba(246, 70, 93, 0.2); }
+.neutral { border-color: #f0b90b !important; color: #f0b90b; }
+
+footer { margin-top: 15px; font-size: 0.7rem; color: #474d57; text-align: center; }
+
+.auto-refresh {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    color: #848e9c;
+    font-size: 0.7rem;
+    display: inline-block;
+    border: 1px solid #333;
+}
+
+#timer {
+    color: #f0b90b;
+    font-weight: bold;
+    min-width: 20px;
+    display: inline-block;
+}
+
+/* Heartbeat pulse during update */
+.updating {
+    animation: heartbeat 0.5s ease-in-out;
+}
+
+@keyframes heartbeat {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; transform: scale(0.98); }
+    100% { opacity: 1; transform: scale(1); }
+}
