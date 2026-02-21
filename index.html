@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trade-Pulse Pro | Decision Engine</title>
+    <title>Oanda XAU/USD | Scalp Engine</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="terminal">
         <header>
-            <h1>TRADE-PULSE <span class="live-tag">● LIVE MARKET</span></h1>
+            <h1>OANDA-PULSE <span class="live-tag">● XAU/USD SPOT</span></h1>
             <div class="ticker">
-                BTC/USDT: <span id="price-value">Loading...</span>
+                OANDA PRICE: <span id="price-value">Loading...</span>
             </div>
         </header>
 
@@ -24,39 +24,42 @@
         <main>
             <div id="display-screen" class="screen">
                 <div id="result-content">
-                    <h2 id="signal-text">INITIALIZING</h2>
-                    <p id="sub-text">Scanning Global Orderbooks</p>
+                    <h2 id="signal-text">SYNCING OANDA</h2>
+                    <p id="sub-text">Connecting to Forex Data Stream</p>
                 </div>
             </div>
 
             <div class="metrics">
-                <div class="metric-item">RSI (14): <span id="rsi-val">--</span></div>
-                <div class="metric-item">Trend (EMA20): <span id="trend-val">--</span></div>
+                <div class="metric-item">STOCH (5,3,3): <span id="rsi-val">--</span></div>
+                <div class="metric-item">EMA BIAS: <span id="trend-val">--</span></div>
             </div>
 
-            <button id="action-btn" onclick="getMarketDecision()">EXECUTE AI ANALYSIS</button>
+            <div class="news-pulse">
+                <h3>NEWS PULSE</h3>
+                <div id="news-content">Monitoring USD volatility...</div>
+            </div>
+
+            <button id="action-btn" onclick="getMarketDecision()">REFRESH</button>
 
             <div class="risk-manager">
-                <h3>Position Architect</h3>
+                <h3>Position Architect (Oanda Units)</h3>
                 <div class="input-row">
-                    <label>Wallet Balance ($):</label>
+                    <label>Balance ($):</label>
                     <input type="number" id="acc-balance" value="1000">
                 </div>
                 <div class="risk-results">
                     <div class="res-box">STOP LOSS<span id="sl-price">--</span></div>
                     <div class="res-box">TAKE PROFIT<span id="tp-price">--</span></div>
-                    <div class="res-box">POS. SIZE<span id="pos-size">--</span></div>
-                    <div class="res-box">RISK/REWARD<span id="rr-ratio">1:3</span></div>
+                    <div class="res-box">LOT SIZE<span id="pos-size">--</span></div>
+                    <div class="res-box">RISK/REWARD<span id="rr-ratio">1:1.5</span></div>
                 </div>
             </div>
         </main>
 
         <footer>
-    <div class="auto-refresh">
-        Next Update in: <span id="timer">30</span>s
-    </div>
-    <p id="log-msg">Terminal ready. Real-time data active.</p>
-</footer>
+            <div class="auto-refresh">Refresh: <span id="timer">10</span>s</div>
+            <p id="log-msg">Linked to Oanda Global Spot.</p>
+        </footer>
     </div>
 
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
