@@ -23,17 +23,6 @@ Charting: TradingView Lightweight Charts (Oanda Source).
 
 API: Binance/PAXG WebSocket Proxy for high-fidelity technical math.
 
-📥 Installation
-Clone the repository:
-
-Bash
-git clone https://github.com/yourusername/gold-pulse-pro.git
-Open the directory:
-
-Bash
-cd gold-pulse-pro
-Launch:
-Simply open index.html in any modern web browser. No local server or npm install required.
 
 📈 Scalping Strategy Logic
 The terminal issues a signal based on "Trend-Following Reversions":
